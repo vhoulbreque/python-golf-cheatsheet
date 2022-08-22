@@ -89,6 +89,40 @@ a=L[-i-1]  # 3
 
 **Explanation**: `~` is the bitwise inversion, leading to `~i` being equal to `-i-1`.
 
+## Add an element to a list
+
+```python
+L=[1,2,3,4,5]
+a=6
+L+=a,
+```
+
+instead of
+
+```python
+L=[1,2,3,4,5]
+a=6
+L+=[a]
+# or
+L.append(a)
+```
+
+## Add 2 lists together
+
+```python
+L=[1,2,3]
+M=[4,5,6]
+L+=M
+```
+
+instead of
+
+```python
+L=[1,2,3]
+M=[4,5,6]
+L.extend(M)
+```
+
 # LOOPS
 
 ## Merge 2 for loops together
