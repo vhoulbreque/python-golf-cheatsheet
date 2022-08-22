@@ -71,6 +71,24 @@ a=L[-1]
 # a = 8
 ```
 
+## Get an element from the back of a list
+
+```python
+L=[1,2,3,4,5]
+i=2
+a=L[~i]  # 3
+```
+
+instead of
+
+```python
+L=[1,2,3,4,5]
+i=2
+a=L[-i-1]  # 3
+```
+
+**Explanation**: `~` is the bitwise inversion, leading to `~i` being equal to `-i-1`.
+
 # LOOPS
 
 ## Merge 2 for loops together
