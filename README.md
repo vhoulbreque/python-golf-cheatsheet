@@ -2,6 +2,42 @@
 
 This is a golf cheatsheet that lists techniques to reduce the number of chars in Python code.
 
+# INTEGERS
+
+## Check if a number is a power of 2
+
+```python
+n&~-n  # zero for powers of 2, non-zero for others
+# or
+n&~-n<1
+# or
+n&-n-n  # zero for powers of 2, non-zero for others
+# or
+n&-n==n
+```
+
+instead of
+
+```python
+(n & (n-1) == 0) and n != 0
+# or
+import math;math.log(n, 2).is_integer()
+# or
+bin(num).count("1") == 1
+```
+
+## Check if a number is a power of q
+
+```python
+q**n%n<1
+```
+
+instead of
+
+```python
+import math;math.log(n, q).is_integer()
+```
+
 # STRINGS
 
 ## Generate the entire alphabet
