@@ -113,16 +113,16 @@ a=L[-1]
 
 ```python
 L=[1,2,3,4,5]
-i=2
-a=L[~i]  # 3
+i=3
+a=L[~i]  # 2
 ```
 
 instead of
 
 ```python
 L=[1,2,3,4,5]
-i=2
-a=L[-i-1]  # 3
+i=3
+a=L[-i-1]  # 2
 ```
 
 **Explanation**: `~` is the bitwise inversion, leading to `~i` being equal to `-i-1`.
