@@ -29,6 +29,8 @@ bin(num).count("1") == 1
 ## Check if a number is a power of q
 
 ```python
+q**n%n  # zero for powers of q, non-zero for others
+# or
 q**n%n<1
 ```
 
