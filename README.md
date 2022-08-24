@@ -91,6 +91,22 @@ print("FTarlusee"[condition::2])
 # True (if condition is True)
 ```
 
+## Check if a string starts with a given prefix p
+
+```python
+p<=s<p+"􏿽"  # last utf-8 char
+# or
+p<=s<p+"~"  # last printable ascii char
+```
+
+instead of:
+
+```python
+s.startswith(p)
+```
+
+**NB:** See [the utf-8 list](https://www.fileformat.info/info/charset/UTF-8/list.htm?start=122475) to see the last char.
+
 # ITERABLES
 
 ## Get the last element of a list
