@@ -215,17 +215,40 @@ for i in range(m):
 ## Ternary operation
 
 ```python
-s = [a, b][condition]
+s=[x,y][b]
 ```
 
 instead of:
 
 ```python
-s = b if condition else a
+s = y if b else x
 ```
 
 **CAVEAT:**
-`condition` must be `True`, `False`, `0` or `1`. Being "truthy"/"untruthy" is not sufficient.
+`b` must be `True`, `False`, `0` or `1`. Being "truthy"/"untruthy" is not sufficient.
+
+## Ternary operation for numbers
+
+For `x` and `y` numbers and `b` a boolean:
+
+| do       | instead of   |
+| -------- | ------------ |
+| `y*b`    | `[0,y][b]`   |
+| `y**b`   | `[1,y][b]`   |
+| `b or x` | `[x,1][b]`   |
+| `x+b`    | `[x,x+1][b]` |
+| `x-b`    | `[x,x-1][b]` |
+| `x+z*b`  | `[x,y][b]`*  |
+
+\* only works if `z=y-x` already exists.
+
+For `x` and `y` **integers** and `b` a boolean:
+
+| do      | instead of   |
+| ------- | ------------ |
+| `1\|-b` | `[1,-1][b]`  |
+| `x^-b`  | `[x,~x][b] ` |
+| `-x-b`  | `[-x,~x][b]` |
 
 # MISC
 
