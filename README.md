@@ -179,6 +179,20 @@ L.extend(M)
 
 # LOOPS
 
+## Loop on small range
+
+```python
+for i in 0,1,2:
+```
+
+instead of
+
+```python
+for i in range(3):
+```
+
+**CAVEAT**: it works only for loops of up until `range(3)` included.
+
 ## Merge 2 for loops together
 
 ```python
