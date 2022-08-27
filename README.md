@@ -193,6 +193,30 @@ for i in range(3):
 
 **CAVEAT**: it works only for loops of up until `range(3)` included.
 
+## Loop when index is not used
+
+```python
+exec("do_something;"*n)
+```
+
+instead of
+
+```python
+for _ in range(n):do_something
+```
+
+## Loop on reverse
+
+```python
+i=n;exec("do_something;i-=1;"*n)
+```
+
+instead of
+
+```python
+for i in range(n,0,-1):do_something
+```
+
 ## Merge 2 for loops together
 
 ```python
