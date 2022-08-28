@@ -107,6 +107,24 @@ s.startswith(p)
 
 **NB:** See [the utf-8 list](https://www.fileformat.info/info/charset/UTF-8/list.htm?start=122475) to see the last char.
 
+## Replace chars
+
+```python
+"ATTCGAAGCCTTC".translate({65:84,84:"U"})  # "TUUCGTTGCCUUC"
+"ATTCGAAGCCTTC".translate({65:84,84:"55"})  # "T5555CGTTGCC5555C"
+"ATTCGAAGCCTTC".translate({65:84,84:65})  # "TAACGTTGCCAAC"
+```
+
+instead of:
+
+```python
+"ATTCGAAGCCTTC".replace("T","U").replace("A","T")  # "TUUCGTTGCCUUC"
+"ATTCGAAGCCTTC".replace("T","55").replace("A","T")  # "T5555CGTTGCC5555C"
+"ATTCGAAGCCTTC".replace("A","~").replace("T","A").replace("~","T")  # "TAACGTTGCCAAC"
+```
+
+**Explanation:** `replace` is costly because you have to use it once for every replacement you want to make. Moreover, when you need to exchange 2 chars ("A" -> "T" and "T" to "A"), you are forced to make one more `.replace` call for the exchange to give the correct result.
+
 # ITERABLES
 
 ## Get the last element of a list
