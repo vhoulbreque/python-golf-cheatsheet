@@ -306,6 +306,28 @@ For `x` and `y` **integers** and `b` a boolean:
 | `x^-b`  | `[x,~x][b] ` |
 | `-x-b`  | `[-x,~x][b]` |
 
+## Check the first element of a list
+
+```python
+L=[1,3,4,8]
+M=[]
+L[:1]==[1]  # True
+L[:1]==[2]  # False
+M[:1]==[1]  # False
+```
+
+instead of
+
+```python
+L=[1,3,4,8]
+M=[]
+next(iter(L),None)==1  # True
+next(iter(L),None)==2  # False
+next(iter(M),None)==1  # False
+```
+
+Slicing the list is always possible, therefore `[][:1]` does not fail and just returns `[]`. `[][0]` would fail. The interesting part is that it works when the list is empty and when the list contains at least an element with the same expression.
+
 # MISC
 
 ## Instantiate several variables
